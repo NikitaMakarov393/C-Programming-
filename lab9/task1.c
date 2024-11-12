@@ -79,7 +79,7 @@ int max_replace_column_sum(int N, int max_replace_column,int **MATRIX){
 int main(){
     int N;
     int **matrix = mat(&N);
-    if (matrix == NULL) { // добавлена проверка на успешность выделения памяти
+    if (matrix == NULL) { 
         printf("Не удалось выделить память для матрицы.\n");
         return 1;
     }
