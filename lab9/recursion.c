@@ -9,11 +9,12 @@ double recursion(double x, int n) {
     if (n == 0) {
         return cos(b);
     } else {
-        // Вычисляем факториал n
+        // Вычисление факториала n
         unsigned long long factorial_n = 1;
         for (int N = 1; N <= n; N++) {
             factorial_n *= N; 
         }
+        // Проверка на переполнение факториала, так же исключает возможность факториала быть равным 0
         if (factorial_n > 18 446 744 073 709 551 615 || factorial_n == 0){
             return NAN;
         }
@@ -35,6 +36,7 @@ int main() {
     scanf("%d", &n);
     }while(n <= 0 || n % 1 != 0);
     double result = recursion(x, n);
+    // Проверка на допустимость значений
     if (isnan(result)) {
         printf("Ошибка при вычислении : результат недопустимый (переполнение факториала n) (NaN).\n");
     } else {
